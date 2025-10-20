@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Home</title>
+    <title>Welcome to the Art Gallery</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Simple Custom Style for the Hero Background */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') no-repeat center center; /* Replace with your hero image */
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .carousel-img {
+            height: 400px; /* Set a fixed height for carousel images */
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,7 +29,7 @@
             <a class="navbar-brand" href="index.html">Art Gallery</a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="display.html">Art Display</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="signup.html">Sign Up</a></li>
@@ -22,11 +37,55 @@
             </div>
         </div>
     </nav>
-    <div class="container my-5">
-        <h1>Welcome to the Art Gallery</h1>
-        <p>This is the content for the Home Page. We will add a hero section here later.</p>
+    <div class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Discover Timeless Masterpieces</h1>
+            <p class="lead">Explore the finest collection of art from every era.</p>
+            <a href="display.html" class="btn btn-warning btn-lg mt-3">Browse the Gallery</a>
+        </div>
     </div>
 
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Featured Artworks</h2>
+        
+        <div id="artCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <img src="images/featured1.jpg" class="d-block w-100 carousel-img" alt="Featured Art 1">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
+                        <h5>A Classic Collection</h5>
+                        <p>Explore our latest acquisition from the Renaissance era.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="images/featured2.jpg" class="d-block w-100 carousel-img" alt="Featured Art 2">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
+                        <h5>Modern Abstract</h5>
+                        <p>Bold colors and compelling forms from contemporary artists.</p>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="images/featured3.jpg" class="d-block w-100 carousel-img" alt="Featured Art 3">
+                    <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50">
+                        <h5>Sculpture Showcase</h5>
+                        <p>Three-dimensional beauty captured in stone and bronze.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#artCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#artCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
